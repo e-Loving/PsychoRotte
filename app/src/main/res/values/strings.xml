@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PsychoR</string>
-    <string name="Psychology">PsychoR</string>
+    <string name="Psychology">sycho</string>
+    <string name="todo">TODO</string>
+    <string name="p">P</string>
+    <string name="r">R</string>
 </resources>
