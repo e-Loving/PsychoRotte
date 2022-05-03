@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/border"
+    android:background="@drawable/bg"
     app:layoutDescription="@xml/activity_handle_scene"
     tools:context=".HandleActivity">
 
