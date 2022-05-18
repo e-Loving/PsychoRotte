@@ -4,4 +4,8 @@
     <string name="todo">TODO</string>
     <string name="p">P</string>
     <string name="r">R</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_books">Books</string>
+    <string name="title_settings">Settings</string>
 </resources>

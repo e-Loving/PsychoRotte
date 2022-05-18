@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/ic_bg"
     app:layoutDescription="@xml/activity_handle_scene"
     tools:context=".HandleActivity">
 
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_name" />
 
     <TextView
-        android:id="@+id/R"
+        android:id="@+id/r"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tapestry"

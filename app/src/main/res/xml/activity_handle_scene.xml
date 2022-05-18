@@ -24,7 +24,7 @@
             motion:layout_constraintHorizontal_bias="0.416"
             android:alpha="0" />
         <Constraint
-            android:id="@+id/R"
+            android:id="@+id/r"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintTop_toTopOf="parent"
