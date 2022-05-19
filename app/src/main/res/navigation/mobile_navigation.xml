@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="uz.eloving.psychorotte.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="uz.eloving.psychorotte.ui.home.AsosiyFragment"
+        android:label="@string/title_asosiy"
+        tools:layout="@layout/fragment_asosiy" />
 
     <fragment
         android:id="@+id/navigation_books"
-        android:name="uz.eloving.psychorotte.ui.books.BooksFragment"
-        android:label="@string/title_books"
-        tools:layout="@layout/fragment_books" />
+        android:name="uz.eloving.psychorotte.ui.books.KitoblarFragment"
+        android:label="@string/title_kitoblar"
+        tools:layout="@layout/fragment_kitoblar" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="uz.eloving.psychorotte.ui.settings.SettingsFragment"
-        android:label="@string/title_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:name="uz.eloving.psychorotte.ui.settings.HisobFragment"
+        android:label="@string/title_hisob"
+        tools:layout="@layout/fragment_hisob" />
 </navigation>
