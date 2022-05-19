@@ -104,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="15dp"
         android:elevation="5dp"
         app:cardBackgroundColor="#2962FF"
@@ -160,7 +160,7 @@
     <ImageView
         android:layout_width="160dp"
         android:layout_height="170dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="315dp"
         android:elevation="10dp"
         android:src="@drawable/air_ballon_with_clouds"
         app:layout_constraintEnd_toEndOf="@id/cv_medium"
@@ -171,10 +171,10 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="15dp"
         android:elevation="5dp"
-        app:cardBackgroundColor="#3A3131"
+        app:cardBackgroundColor="#FFAB00"
         app:cardCornerRadius="50dp"
         app:layout_constraintTop_toBottomOf="@id/cv_medium">
 
@@ -189,7 +189,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bg_of_btn"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#F4511E"
                 android:src="@drawable/ic_baseline_play_arrow_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -226,9 +226,9 @@
     <ImageView
         android:layout_width="160dp"
         android:layout_height="170dp"
-        android:layout_marginTop="485dp"
+        android:layout_marginTop="545dp"
         android:elevation="10dp"
-        android:src="@drawable/photography"
+        android:src="@drawable/photo"
         app:layout_constraintEnd_toEndOf="@id/cv_difficult"
         app:layout_constraintTop_toTopOf="parent" />
 
