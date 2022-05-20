@@ -24,7 +24,7 @@ class HandleActivity : AppCompatActivity() {
                     sharedPreferences.getString("name", "name") == "name" -> {
                         Intent(this, LoginActivity::class.java)
                     }
-                    sharedPreferences.getString("password", "password") != "password" -> {
+                    sharedPreferences.getBoolean("toggle", false) -> {
                         Intent(this, CodeConfirmationActivity::class.java)
                     }
                     else -> {

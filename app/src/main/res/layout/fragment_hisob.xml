@@ -4,19 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.settings.HisobFragment">
 
+    <ImageView
+        android:id="@+id/iv_settings"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/settings"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/tv_sozlamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Sozlamalar"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_settings"
+        app:layout_constraintStart_toStartOf="@id/iv_settings"
+        app:layout_constraintTop_toBottomOf="@id/iv_settings" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_username"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:fontFamily="@font/quicksand"
+        android:textSize="25sp"
+        android:textAllCaps="false"
+        android:gravity="left"
+        app:layout_constraintTop_toBottomOf="@id/tv_sozlamar"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"
+        android:text="Ism"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_parol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/quicksand"
+        android:gravity="left"
+        android:layout_marginTop="20dp"
+        android:text="Parol"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/mb_username" />
+    <Switch
+        android:id="@+id/sw_switch"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="@+id/mb_parol"
+        app:layout_constraintEnd_toEndOf="@id/mb_parol"
+        app:layout_constraintBottom_toBottomOf="@+id/mb_parol"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 </androidx.constraintlayout.widget.ConstraintLayout>

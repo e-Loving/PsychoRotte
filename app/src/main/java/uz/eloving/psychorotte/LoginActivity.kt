@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
                 if (binding.etPassword.text.toString().length == 4) {
                     sharedPreferences.edit()
                         .putString("password", binding.etPassword.text.toString()).apply()
+                    sharedPreferences.edit().putBoolean("toggle", true).apply()
                     val name = binding.etName.text.toString()
                     sharedPreferences.edit().putString("name", name).apply()
                     val intent = Intent(this, MainActivity::class.java)

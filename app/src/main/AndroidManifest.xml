@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PsychoRotte">
         <activity
-            android:name=".CodeConfirmationActivity"
+            android:name=".SetUsernameActivity"
             android:theme="@style/Theme.PsychoRotteLoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".SetPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PsychoRotteLoginActivity" />
+        <activity
+            android:name=".CodeConfirmationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PsychoRotteLoginActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"

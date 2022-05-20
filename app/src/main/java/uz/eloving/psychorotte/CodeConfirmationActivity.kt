@@ -22,11 +22,21 @@ class CodeConfirmationActivity : AppCompatActivity() {
                     "password"
                 )
             ) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+                if (sharedPreferences.getBoolean("askpassword", false)) {
+                    val intent = Intent(this, SetUsernameActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+
             } else {
                 Toast.makeText(this, "Parol noto'g'ri !", Toast.LENGTH_SHORT).show()
             }
+        }
+        binding.ibBack.setOnClickListener {
+            sharedPreferences.edit().putBoolean("askpassword", false).apply()
+            onBackPressed()
         }
     }
 }
