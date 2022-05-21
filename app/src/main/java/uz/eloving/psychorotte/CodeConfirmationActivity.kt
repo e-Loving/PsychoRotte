@@ -36,6 +36,7 @@ class CodeConfirmationActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
+                finish()
 
             } else {
                 Toast.makeText(this, "Parol noto'g'ri !", Toast.LENGTH_SHORT).show()
