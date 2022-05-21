@@ -22,6 +22,7 @@ class SetPasswordActivity : AppCompatActivity() {
             }else{
                 sharedPreferences.edit().putString("password", binding.etPassword.text.toString()).apply()
                 sharedPreferences.edit().putBoolean("toggle", true).apply()
+                sharedPreferences.edit().putBoolean("setnewpassword", false).apply()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()

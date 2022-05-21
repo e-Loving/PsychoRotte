@@ -22,12 +22,19 @@ class CodeConfirmationActivity : AppCompatActivity() {
                     "password"
                 )
             ) {
-                if (sharedPreferences.getBoolean("askpassword", false)) {
-                    val intent = Intent(this, SetUsernameActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                when {
+                    sharedPreferences.getBoolean("askpassword", false) -> {
+                        val intent = Intent(this, SetUsernameActivity::class.java)
+                        startActivity(intent)
+                    }
+                    sharedPreferences.getBoolean("setnewpassword", false) -> {
+                        val intent = Intent(this, SetPasswordActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else -> {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
 
             } else {

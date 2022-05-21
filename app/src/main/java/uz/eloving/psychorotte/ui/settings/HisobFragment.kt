@@ -45,7 +45,8 @@ class HisobFragment : Fragment() {
         }
         binding.mbParol.setOnClickListener {
             if (sharedPreferences.getString("password", "password") != "password") {
-                sharedPreferences.edit().putBoolean("askpassword", true).apply()
+                sharedPreferences.edit().putBoolean("setnewpassword", true).apply()
+                sharedPreferences.edit().putBoolean("askpassword", false).apply()
                 val intent = Intent(requireContext(), CodeConfirmationActivity::class.java)
                 startActivity(intent)
             } else {
