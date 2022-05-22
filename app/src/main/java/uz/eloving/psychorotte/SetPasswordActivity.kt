@@ -17,10 +17,15 @@ class SetPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
         sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         binding.btnConfirm.setOnClickListener {
-            if(binding.etPassword.text.toString().length != 4){
-                Toast.makeText(this, "Parol 4 raqamdan tashkil topgan bo'lishi kerak !", Toast.LENGTH_LONG).show()
-            }else{
-                sharedPreferences.edit().putString("password", binding.etPassword.text.toString()).apply()
+            if (binding.etPassword.text.toString().length != 4) {
+                Toast.makeText(
+                    this,
+                    "Parol 4 raqamdan tashkil topgan bo'lishi kerak !",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                sharedPreferences.edit().putString("password", binding.etPassword.text.toString())
+                    .apply()
                 sharedPreferences.edit().putBoolean("toggle", true).apply()
                 sharedPreferences.edit().putBoolean("setnewpassword", false).apply()
                 val intent = Intent(this, MainActivity::class.java)
@@ -28,6 +33,17 @@ class SetPasswordActivity : AppCompatActivity() {
                 finish()
             }
         }
+        binding.btnDelete.setOnClickListener {
+            sharedPreferences.edit().putString("password", "password").apply()
+            sharedPreferences.edit().putBoolean("deleted", true).apply()
+            sharedPreferences.edit().putBoolean("toggle", false).apply()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
+
         binding.ibBack.setOnClickListener {
             onBackPressed()
         }

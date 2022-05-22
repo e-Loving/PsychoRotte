@@ -17,25 +17,30 @@ class CodeConfirmationActivity : AppCompatActivity() {
         binding = ActivityCodeConfirmationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnConfirm.setOnClickListener {
+            // If confirm button clicked then the programm checks the password with edittext field if true,
+            // next action will start otherwise toast will appear
             if (binding.etPassword.text.toString() == sharedPreferences.getString(
                     "password",
                     "password"
                 )
             ) {
-                when {
+                val intent = when {
+                    // In hisob fragment, if ism sozlash button clicked then askpassword cache will be stored
+                    // otherwise first statement will be false
                     sharedPreferences.getBoolean("askpassword", false) -> {
-                        val intent = Intent(this, SetUsernameActivity::class.java)
-                        startActivity(intent)
+                        Intent(this, SetUsernameActivity::class.java)
                     }
+                    // In hisob fragment, if parol sozlash button clicked then setnewpassword cache will be stored
+                    // otherwise second statement will be false
                     sharedPreferences.getBoolean("setnewpassword", false) -> {
-                        val intent = Intent(this, SetPasswordActivity::class.java)
-                        startActivity(intent)
+                        Intent(this, SetPasswordActivity::class.java)
                     }
+                    // If two caches wouldn't be stored then the code below will run
                     else -> {
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+                        Intent(this, MainActivity::class.java)
                     }
                 }
+                startActivity(intent)
                 finish()
 
             } else {

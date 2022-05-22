@@ -39,11 +39,11 @@
         android:textAllCaps="false"
         android:gravity="left"
         app:layout_constraintTop_toBottomOf="@id/tv_sozlamar"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_height="wrap_content"
-        android:text="Ism"/>
+        android:text="Ism sozlash"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mb_parol"
@@ -52,8 +52,8 @@
         android:backgroundTint="@color/white"
         android:fontFamily="@font/quicksand"
         android:gravity="left"
-        android:layout_marginTop="20dp"
-        android:text="Parol"
+        android:layout_marginTop="10dp"
+        android:text="Parol sozlash"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -70,4 +70,17 @@
         app:layout_constraintEnd_toEndOf="@id/mb_parol"
         app:layout_constraintBottom_toBottomOf="@+id/mb_parol"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Parolni yo'q qilish"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:fontFamily="@font/quicksand"-->
+<!--        android:textSize="25sp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:gravity="left"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/mb_parol"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

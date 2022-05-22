@@ -28,7 +28,8 @@ class HisobFragment : Fragment() {
     ): View {
         _binding = FragmentHisobBinding.inflate(inflater, container, false)
         sharedPreferences = requireActivity().getSharedPreferences("app", Context.MODE_PRIVATE)
-        binding.swSwitch.isChecked = sharedPreferences.getBoolean("toggle", false)
+        binding.swSwitch.isChecked =
+            sharedPreferences.getString("password", "password") != "password"
         binding.swSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (!isChecked) {
                 sharedPreferences.edit().putBoolean("toggle", false).apply()
@@ -41,7 +42,8 @@ class HisobFragment : Fragment() {
                     startActivity(intent)
                 }
             }
-            sharedPreferences.edit().putBoolean("toggle", isChecked).apply()
+
+//            sharedPreferences.edit().putBoolean("toggle", isChecked).apply()
         }
         binding.mbParol.setOnClickListener {
             if (sharedPreferences.getString("password", "password") != "password") {
@@ -55,10 +57,10 @@ class HisobFragment : Fragment() {
             }
         }
         binding.mbUsername.setOnClickListener {
-            if(sharedPreferences.getString("password", "password") == "password"){
+            if (sharedPreferences.getString("password", "password") == "password") {
                 val intent = Intent(requireContext(), SetUsernameActivity::class.java)
                 startActivity(intent)
-            }else{
+            } else {
                 sharedPreferences.edit().putBoolean("askpassword", true).apply()
                 val intent = Intent(requireContext(), CodeConfirmationActivity::class.java)
                 startActivity(intent)
