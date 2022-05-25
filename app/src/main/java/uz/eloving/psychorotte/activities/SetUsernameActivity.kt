@@ -1,4 +1,4 @@
-package uz.eloving.psychorotte
+package uz.eloving.psychorotte.activities
 
 import android.content.Context
 import android.content.Intent
@@ -17,8 +17,8 @@ class SetUsernameActivity : AppCompatActivity() {
         setContentView(binding.root)
         sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         binding.btnConfirm.setOnClickListener {
-            if (binding.etUsername.text.toString().isNotEmpty()) {
-                sharedPreferences.edit().putString("name", binding.etUsername.text.toString())
+            if (binding.etName.text.toString().isNotEmpty()) {
+                sharedPreferences.edit().putString("name", binding.etName.text.toString())
                     .apply()
                 sharedPreferences.edit().putBoolean("askpassword", false).apply()
                 val intent = Intent(this, MainActivity::class.java)

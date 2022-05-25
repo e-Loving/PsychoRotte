@@ -1,5 +1,6 @@
-package uz.eloving.psychorotte
+package uz.eloving.psychorotte.activities
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -11,15 +12,17 @@ import uz.eloving.psychorotte.databinding.ActivityCodeConfirmationBinding
 class CodeConfirmationActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var binding: ActivityCodeConfirmationBinding
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         binding = ActivityCodeConfirmationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnConfirm.setOnClickListener {
+        binding.tvWelcome.text = "Parolni kiriting\n${sharedPreferences.getString("name", "Boss")}!"
+        binding.pinview.setOnClickListener {
             // If confirm button clicked then the programm checks the password with edittext field if true,
             // next action will start otherwise toast will appear
-            if (binding.etPassword.text.toString() == sharedPreferences.getString(
+            if (binding.pinview.text.toString() == sharedPreferences.getString(
                     "password",
                     "password"
                 )

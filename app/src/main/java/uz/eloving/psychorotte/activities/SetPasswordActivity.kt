@@ -1,4 +1,4 @@
-package uz.eloving.psychorotte
+package uz.eloving.psychorotte.activities
 
 import android.content.Context
 import android.content.Intent
@@ -17,14 +17,14 @@ class SetPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
         sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         binding.btnConfirm.setOnClickListener {
-            if (binding.etPassword.text.toString().length != 4) {
+            if (binding.pinview.text.toString().length != 4) {
                 Toast.makeText(
                     this,
                     "Parol 4 raqamdan tashkil topgan bo'lishi kerak !",
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-                sharedPreferences.edit().putString("password", binding.etPassword.text.toString())
+                sharedPreferences.edit().putString("password", binding.pinview.text.toString())
                     .apply()
                 sharedPreferences.edit().putBoolean("toggle", true).apply()
                 sharedPreferences.edit().putBoolean("setnewpassword", false).apply()

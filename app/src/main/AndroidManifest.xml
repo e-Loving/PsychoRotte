@@ -10,27 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PsychoRotte">
         <activity
-            android:name=".SetUsernameActivity"
-            android:theme="@style/Theme.PsychoRotteLoginActivity"
+            android:name=".ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".SetPasswordActivity"
+            android:name=".activities.QuizActivity"
             android:exported="false"
             android:theme="@style/Theme.PsychoRotteLoginActivity" />
         <activity
-            android:name=".CodeConfirmationActivity"
+            android:name=".activities.SetUsernameActivity"
             android:exported="false"
             android:theme="@style/Theme.PsychoRotteLoginActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.SetPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.PsychoRotteLoginActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.CodeConfirmationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PsychoRotteLoginActivity" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PsychoRotteLoginActivity" />
+        <activity
+            android:name=".activities.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main" />
         <activity
-            android:name=".HandleActivity"
+            android:name=".activities.HandleActivity"
             android:exported="true"
             android:theme="@style/Theme.PsychoRotteTransparent">
             <intent-filter>

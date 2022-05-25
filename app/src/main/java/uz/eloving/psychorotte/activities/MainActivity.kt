@@ -1,14 +1,11 @@
-package uz.eloving.psychorotte
+package uz.eloving.psychorotte.activities
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import uz.eloving.psychorotte.R
 import uz.eloving.psychorotte.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

@@ -1,16 +1,12 @@
-package uz.eloving.psychorotte
+package uz.eloving.psychorotte.activities
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
-import android.graphics.LinearGradient
-import android.graphics.Shader
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
-import android.widget.TextView
+import uz.eloving.psychorotte.R
 
 class HandleActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -18,6 +14,7 @@ class HandleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_handle)
         sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
+        // If user logged before then login activity will not appear more
         Handler().postDelayed({
             val intent =
                 when {

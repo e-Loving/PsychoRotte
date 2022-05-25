@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg"
     app:layoutDescription="@xml/activity_handle_scene"
-    tools:context=".HandleActivity">
+    tools:context=".activities.HandleActivity">
 
     <ImageView
         android:id="@+id/img_logo"

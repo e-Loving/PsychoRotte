@@ -7,12 +7,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import uz.eloving.psychorotte.CodeConfirmationActivity
-import uz.eloving.psychorotte.LoginActivity
-import uz.eloving.psychorotte.SetPasswordActivity
-import uz.eloving.psychorotte.SetUsernameActivity
+import uz.eloving.psychorotte.activities.CodeConfirmationActivity
+import uz.eloving.psychorotte.activities.SetPasswordActivity
+import uz.eloving.psychorotte.activities.SetUsernameActivity
 import uz.eloving.psychorotte.databinding.FragmentHisobBinding
 
 class HisobFragment : Fragment() {
@@ -42,8 +40,6 @@ class HisobFragment : Fragment() {
                     startActivity(intent)
                 }
             }
-
-//            sharedPreferences.edit().putBoolean("toggle", isChecked).apply()
         }
         binding.mbParol.setOnClickListener {
             if (sharedPreferences.getString("password", "password") != "password") {
