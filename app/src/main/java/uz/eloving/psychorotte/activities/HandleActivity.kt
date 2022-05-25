@@ -6,22 +6,21 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import uz.eloving.psychorotte.PrefManager
 import uz.eloving.psychorotte.R
 
 class HandleActivity : AppCompatActivity() {
-    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_handle)
-        sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         // If user logged before then login activity will not appear more
         Handler().postDelayed({
             val intent =
                 when {
-                    sharedPreferences.getString("name", "name") == "name" -> {
+                    PrefManager.getName(this) == "Boss" -> {
                         Intent(this, LoginActivity::class.java)
                     }
-                    sharedPreferences.getBoolean("toggle", false) -> {
+                    PrefManager.getToggle(this) -> {
                         Intent(this, CodeConfirmationActivity::class.java)
                     }
                     else -> {

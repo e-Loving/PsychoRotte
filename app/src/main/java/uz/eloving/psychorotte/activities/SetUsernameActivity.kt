@@ -1,26 +1,22 @@
 package uz.eloving.psychorotte.activities
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import uz.eloving.psychorotte.PrefManager
 import uz.eloving.psychorotte.databinding.ActivitySetUsernameBinding
 
 class SetUsernameActivity : AppCompatActivity() {
-    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var binding: ActivitySetUsernameBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySetUsernameBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         binding.btnConfirm.setOnClickListener {
             if (binding.etName.text.toString().isNotEmpty()) {
-                sharedPreferences.edit().putString("name", binding.etName.text.toString())
-                    .apply()
-                sharedPreferences.edit().putBoolean("askpassword", false).apply()
+                PrefManager.setName(this, binding.etName.text.toString())
+                PrefManager.setAskPassword(this, false)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -31,7 +27,5 @@ class SetUsernameActivity : AppCompatActivity() {
         binding.ibBack.setOnClickListener {
             onBackPressed()
         }
-
-
     }
 }

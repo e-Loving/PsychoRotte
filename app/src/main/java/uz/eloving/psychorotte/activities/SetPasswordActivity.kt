@@ -6,16 +6,15 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import uz.eloving.psychorotte.PrefManager
 import uz.eloving.psychorotte.databinding.ActivitySetPasswordBinding
 
 class SetPasswordActivity : AppCompatActivity() {
-    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var binding: ActivitySetPasswordBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        sharedPreferences = this.getSharedPreferences("app", Context.MODE_PRIVATE)
         binding.btnConfirm.setOnClickListener {
             if (binding.pinview.text.toString().length != 4) {
                 Toast.makeText(
@@ -24,19 +23,18 @@ class SetPasswordActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-                sharedPreferences.edit().putString("password", binding.pinview.text.toString())
-                    .apply()
-                sharedPreferences.edit().putBoolean("toggle", true).apply()
-                sharedPreferences.edit().putBoolean("setnewpassword", false).apply()
+                PrefManager.setPassword(this, binding.pinview.text.toString())
+                PrefManager.setToggle(this, true)
+                PrefManager.setNewPassword(this, false)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
         }
         binding.btnDelete.setOnClickListener {
-            sharedPreferences.edit().putString("password", "password").apply()
-            sharedPreferences.edit().putBoolean("deleted", true).apply()
-            sharedPreferences.edit().putBoolean("toggle", false).apply()
+            PrefManager.setPassword(this, "password")
+            PrefManager.setDeleted(this, false)
+            PrefManager.setToggle(this, false)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
