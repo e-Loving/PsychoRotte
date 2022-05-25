@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import uz.eloving.psychorotte.PrefManager
 import uz.eloving.psychorotte.activities.CodeConfirmationActivity
 import uz.eloving.psychorotte.activities.SetPasswordActivity
 import uz.eloving.psychorotte.activities.SetUsernameActivity
@@ -17,7 +18,6 @@ class HisobFragment : Fragment() {
 
     private var _binding: FragmentHisobBinding? = null
     private val binding get() = _binding!!
-    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,16 +25,15 @@ class HisobFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHisobBinding.inflate(inflater, container, false)
-        sharedPreferences = requireActivity().getSharedPreferences("app", Context.MODE_PRIVATE)
         binding.swSwitch.isChecked =
-            sharedPreferences.getString("password", "password") != "password"
+            PrefManager.getPassword(requireActivity()) != "password"
         binding.swSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (!isChecked) {
-                sharedPreferences.edit().putBoolean("toggle", false).apply()
-                sharedPreferences.edit().putBoolean("askpassword", false).apply()
+                PrefManager.setToggle(requireActivity(), false)
+                PrefManager.setAskPassword(requireActivity(), false)
             } else if (isChecked) {
-                if (sharedPreferences.getString("password", "password") == "password") {
-                    sharedPreferences.edit().putBoolean("toggle", false).apply()
+                if (PrefManager.getPassword(requireActivity()) == "password") {
+                    PrefManager.setToggle(requireActivity(), false)
                     binding.swSwitch.isChecked = false
                     val intent = Intent(requireContext(), SetPasswordActivity::class.java)
                     startActivity(intent)
@@ -42,9 +41,9 @@ class HisobFragment : Fragment() {
             }
         }
         binding.mbParol.setOnClickListener {
-            if (sharedPreferences.getString("password", "password") != "password") {
-                sharedPreferences.edit().putBoolean("setnewpassword", true).apply()
-                sharedPreferences.edit().putBoolean("askpassword", false).apply()
+            if (PrefManager.getPassword(requireActivity()) != "password") {
+                PrefManager.setNewPassword(requireActivity(), true)
+                PrefManager.setAskPassword(requireActivity(), false)
                 val intent = Intent(requireContext(), CodeConfirmationActivity::class.java)
                 startActivity(intent)
             } else {
@@ -53,11 +52,11 @@ class HisobFragment : Fragment() {
             }
         }
         binding.mbUsername.setOnClickListener {
-            if (sharedPreferences.getString("password", "password") == "password") {
+            if (PrefManager.getPassword(requireActivity()) == "password") {
                 val intent = Intent(requireContext(), SetUsernameActivity::class.java)
                 startActivity(intent)
             } else {
-                sharedPreferences.edit().putBoolean("askpassword", true).apply()
+                PrefManager.setAskPassword(requireActivity(), true)
                 val intent = Intent(requireContext(), CodeConfirmationActivity::class.java)
                 startActivity(intent)
             }
