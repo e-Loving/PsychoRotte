@@ -18,13 +18,45 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var optionTV: TextView
     var isOptionClicked = false
     var correctAnswers = 0
-
+    private var tanlangan: String = ""
     var questions = ArrayList<QuestionModel>()
     var questionNumber = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
+        binding.variant1.setOnClickListener {
+            if (binding.variant1.text.toString() == questions[questionNumber].answer) {
+                correctAnswers++
+            }
+            questionNumber++
+            updateQuestion()
+        }
+        binding.variant2.setOnClickListener {
+            if (binding.variant2.text.toString() == questions[questionNumber].answer) {
+                correctAnswers++
+            }
+            questionNumber++
+            updateQuestion()
+        }
+        binding.variant3.setOnClickListener {
+            if (binding.variant3.text.toString() == questions[questionNumber].answer) {
+                correctAnswers++
+            }
+            questionNumber++
+            updateQuestion()
+        }
+        binding.variant4.setOnClickListener {
+            if (binding.variant4.text.toString() == questions[questionNumber].answer) {
+                correctAnswers++
+            }
+            questionNumber++
+            updateQuestion()
+        }
+
         binding.ibBack.setOnClickListener {
             onBackPressed()
         }
@@ -32,6 +64,8 @@ class QuizActivity : AppCompatActivity() {
         questions.shuffle()
         binding.progress.max = questions.size
         updateQuestion()
+
+
     }
 
 
@@ -41,6 +75,7 @@ class QuizActivity : AppCompatActivity() {
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("correct", correctAnswers)
             startActivity(intent)
+            finish()
             return
         }
 

@@ -4,20 +4,20 @@ object Constants {
     fun getQuestions():ArrayList<QuestionModel>{
         val question = ArrayList<QuestionModel>()
         question.add(QuestionModel(
-            "Sizni kimni sevasiz ?",
-            "Munisa",
-            "Munisa",
-            "Munisa",
-            "Munisa",
-            "Munisa"
+            "Savol1",
+            "Variant1",
+            "Variant2",
+            "Variant3",
+            "Variant4",
+            "Variant1"
         ))
         question.add(QuestionModel(
-            "Sizni kimni sevasiz ? 2",
-            "Munisa 2",
-            "Munisa 2",
-            "Munisa 2",
-            "Munisa 2",
-            "Munisa 2"
+            "Savol2",
+            "Variant1",
+            "Variant2",
+            "Variant3",
+            "Variant4",
+            "Variant1"
         ))
         return question
     }

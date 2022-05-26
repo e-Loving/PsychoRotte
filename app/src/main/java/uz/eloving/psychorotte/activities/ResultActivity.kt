@@ -10,5 +10,9 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val correct = intent.getIntExtra("correct" , 0)
+        binding.result.text = correct.toString()
     }
 }
+
+
