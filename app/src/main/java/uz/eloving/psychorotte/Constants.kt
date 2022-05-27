@@ -4,20 +4,20 @@ object Constants {
     fun getQuestions():ArrayList<QuestionModel>{
         val question = ArrayList<QuestionModel>()
         question.add(QuestionModel(
-            "Savol1",
-            "Variant1",
-            "Variant2",
-            "Variant3",
-            "Variant4",
-            "Variant1"
+            "Python dasturlash tili yaratuvchisi kim ?",
+            "Guido van Rossum",
+            "Bjarne Straustrap",
+            "Larry Page",
+            "Sergey Brin",
+            "Guido van Rossum"
         ))
         question.add(QuestionModel(
-            "Savol2",
-            "Variant1",
-            "Variant2",
-            "Variant3",
-            "Variant4",
-            "Variant1"
+            "Python qaysi yilda yaratilgan ?",
+            "1995",
+            "1991",
+            "1987",
+            "1985",
+            "1991"
         ))
         return question
     }
