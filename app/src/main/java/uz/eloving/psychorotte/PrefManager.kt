@@ -1,5 +1,6 @@
 package uz.eloving.psychorotte
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 
@@ -59,6 +60,14 @@ class PrefManager {
 
         fun getToggle(ctx: Context):Boolean{
             return getInstance(ctx).getBoolean(TOGGLE, false)
+        }
+
+        fun setHighScore(ctx: Context, highScore:Int){
+            getInstance(ctx).edit().putInt("highscore", highScore).apply()
+        }
+
+        fun getHighScore(ctx: Context):Int{
+            return getInstance(ctx).getInt("highscore", 0)
         }
     }
 }

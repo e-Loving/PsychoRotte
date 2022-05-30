@@ -70,7 +70,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:hideLineWhenFilled="true"
+        app:hideLineWhenFilled="false"
         app:itemCount="4"
         app:itemHeight="40dp"
         app:itemRadius="10dp"

@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0/0"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#039BE5"
         android:fontFamily="@font/quicksand"
         android:textStyle="bold"
@@ -24,11 +24,13 @@
 
     <TextView
         android:id="@+id/tv_savol"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand"
         android:gravity="center"
         android:text="Savol"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/variant1"

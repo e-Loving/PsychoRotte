@@ -18,11 +18,12 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ism kiritish majburiy !", Toast.LENGTH_LONG).show()
             } else {
                 if (binding.pinview.text.toString().length == 4) {
-                    PrefManager.setName(this, binding.pinview.text.toString())
+                    PrefManager.setPassword(this, binding.pinview.text.toString())
                     PrefManager.setToggle(this, true)
                     PrefManager.setName(this, binding.etName.text.toString())
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 if (binding.pinview.text.toString().isEmpty()) {
                     PrefManager.setName(this, binding.etName.text.toString())

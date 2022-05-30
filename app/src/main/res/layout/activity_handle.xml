@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_bg"
-    app:layoutDescription="@xml/activity_handle_scene"
     tools:context=".activities.HandleActivity">
 
     <ImageView
@@ -20,56 +18,30 @@
         android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/p"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/tapestry"
-        android:text="@string/p"
-        android:textColor="#69F0AE"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
-        app:layout_constraintEnd_toStartOf="@+id/tv_name"
-        app:layout_constraintTop_toTopOf="@+id/tv_name" />
-
-    <TextView
-        android:id="@+id/r"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/tapestry"
-        android:text="@string/r"
-        android:textColor="#FFAB40"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
-        app:layout_constraintStart_toEndOf="@+id/tv_name"
-        app:layout_constraintTop_toTopOf="@+id/tv_name" />
-
-    <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_logo"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/tapestry"
-        android:text="@string/Psychology"
-        android:textColor="#FFFF00"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/app_name"
+        android:textColor="#0091EA"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/img_logo"
         app:layout_constraintRight_toRightOf="@id/img_logo"
         app:layout_constraintTop_toBottomOf="@id/img_logo" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="70dp"
-        android:indeterminate="true"
-        app:layout_constraintLeft_toLeftOf="@+id/tv_name"
-        app:layout_constraintRight_toRightOf="@id/tv_name"
-        app:layout_constraintTop_toBottomOf="@id/tv_name" />
-</androidx.constraintlayout.motion.widget.MotionLayout>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar2"-->
+<!--        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="70dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="70dp"-->
+<!--        android:indeterminate="true"-->
+<!--        app:layout_constraintLeft_toLeftOf="@+id/tv_name"-->
+<!--        app:layout_constraintRight_toRightOf="@id/tv_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_name" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
