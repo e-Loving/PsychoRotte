@@ -6,5 +6,6 @@ data class QuestionModel(
     val variant2: String,
     val variant3: String,
     val variant4: String,
-    val answer: String
+    val answer: String,
+    val hint:String
 )

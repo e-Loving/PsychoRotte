@@ -7,16 +7,38 @@
     android:background="#FFB300"
     tools:context=".activities.QuizActivity">
 
+    <ImageView
+        android:id="@+id/fifty"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/fifty"
+        app:layout_constraintBottom_toBottomOf="@id/iv_chance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_chance">
 
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/hint"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/idea"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_chance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_chance">
+
+    </ImageView>
 
     <TextView
         android:id="@+id/tv_question_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0/0"
-        android:textSize="20sp"
-        android:textColor="#039BE5"
         android:fontFamily="@font/quicksand"
+        android:text="0/0"
+        android:textColor="#039BE5"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/iv_chance"
         app:layout_constraintStart_toStartOf="@+id/iv_chance"
@@ -26,11 +48,11 @@
         android:id="@+id/tv_savol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:fontFamily="@font/quicksand"
         android:gravity="center"
         android:text="Savol"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/variant1"
@@ -107,13 +129,13 @@
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="15dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_daraja"
-        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_daraja" />
 
     <ProgressBar
@@ -126,7 +148,7 @@
         android:progress="5"
         app:layout_constraintEnd_toEndOf="@+id/tv_daraja"
         app:layout_constraintStart_toStartOf="@+id/tv_daraja"
-        app:layout_constraintTop_toBottomOf="@id/tv_daraja"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_daraja" />
 
     <ImageView
         android:id="@+id/iv_chance"
@@ -150,5 +172,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

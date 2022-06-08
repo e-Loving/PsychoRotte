@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
                     PrefManager.setName(this, binding.etName.text.toString())
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else if (binding.pinview.text.toString()
                         .isNotEmpty() && binding.pinview.text.toString().length != 4
                 ) {

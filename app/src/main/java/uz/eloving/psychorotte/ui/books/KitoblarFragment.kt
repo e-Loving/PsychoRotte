@@ -18,8 +18,10 @@ class KitoblarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentKitoblarBinding.inflate(inflater, container, false)
-
         return binding.root
+        binding.imageView.setOnClickListener {
+
+        }
     }
 
     override fun onDestroyView() {

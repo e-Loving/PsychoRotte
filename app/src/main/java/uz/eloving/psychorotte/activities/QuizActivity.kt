@@ -5,12 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import uz.eloving.psychorotte.Constants
 import uz.eloving.psychorotte.PrefManager
 import uz.eloving.psychorotte.QuestionModel
 import uz.eloving.psychorotte.R
 import uz.eloving.psychorotte.databinding.ActivityQuizBinding
+import kotlin.random.Random
 
 class QuizActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuizBinding
@@ -25,6 +28,48 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.hint.setOnClickListener {
+            Toast.makeText(this, questions[questionNumber].hint, Toast.LENGTH_LONG).show()
+        }
+        binding.fifty.setOnClickListener { it ->
+            it.visibility = View.GONE
+
+            val list = mutableListOf(
+                binding.variant1,
+                binding.variant2,
+                binding.variant3,
+                binding.variant4
+            )
+            var randomIndex = Random.nextInt(list.size)
+            var randomElement = list[randomIndex]
+            if (randomElement.text.toString() == questions[questionNumber].answer) {
+                list.remove(randomElement)
+                randomIndex = Random.nextInt(list.size)
+                randomElement = list[randomIndex]
+            }
+            list.forEach {
+                it.visibility = View.GONE
+            }
+            randomElement.visibility = View.VISIBLE
+            val correctAnswer = when (questions[questionNumber].answer) {
+                binding.variant1.text.toString() -> {
+                    binding.variant1
+                }
+                binding.variant2.text.toString() -> {
+                    binding.variant2
+                }
+                binding.variant3.text.toString() -> {
+                    binding.variant3
+                }
+                else -> {
+                    binding.variant4
+                }
+            }
+            correctAnswer.visibility = View.VISIBLE
+        }
+
+
+
         binding.variant1.setOnClickListener {
             if (choice == "${binding.variant1.text}${questionNumber}") {
                 if (binding.variant1.text.toString() == questions[questionNumber].answer) {
@@ -102,7 +147,12 @@ class QuizActivity : AppCompatActivity() {
         }
 
         binding.ibBack.setOnClickListener {
-            onBackPressed()
+            if (correctAnswers > PrefManager.getHighScore(this)) {
+                PrefManager.setHighScore(this, correctAnswers)
+            }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
         questions = Constants.islomga_davat()
         questions.shuffle()
@@ -120,6 +170,10 @@ class QuizActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun updateQuestion() {
+        binding.variant1.visibility = View.VISIBLE
+        binding.variant2.visibility = View.VISIBLE
+        binding.variant3.visibility = View.VISIBLE
+        binding.variant4.visibility = View.VISIBLE
         binding.ivChance.setImageResource(
             when (wrongAnswers) {
                 0 -> {
@@ -128,16 +182,18 @@ class QuizActivity : AppCompatActivity() {
                 1 -> {
                     R.drawable.serious
                 }
-                2 -> {
-                    R.drawable.sad
-                }
                 else -> {
                     R.drawable.sad
                 }
             }
         )
         if (wrongAnswers > 2) {
+            if (correctAnswers > PrefManager.getHighScore(this)) {
+                PrefManager.setHighScore(this, correctAnswers)
+            }
             val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("correct", correctAnswers)
+            intent.putExtra("all", questions.size)
             startActivity(intent)
             finish()
         }
@@ -152,6 +208,7 @@ class QuizActivity : AppCompatActivity() {
             }
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("correct", correctAnswers)
+            intent.putExtra("all", questions.size)
             startActivity(intent)
             finish()
             return
@@ -172,7 +229,7 @@ class QuizActivity : AppCompatActivity() {
         binding.variant4.text = options[3]
     }
 
-    fun setBackground() {
+    private fun setBackground() {
         binding.variant1.isEnabled = false
         binding.variant2.isEnabled = false
         binding.variant3.isEnabled = false

@@ -9,7 +9,8 @@ object Constants {
             "Fors",
             "Eron",
             "Hind",
-            "Arab"
+            "Arab",
+            "Tavrot va Injilda oxirgi zamon pay'ambari haqida keltirilgan !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) qaysi qabiladan edilar ?",
@@ -17,7 +18,8 @@ object Constants {
             "Badaviy",
             "Umaviy",
             "Fotimiy",
-            "Quraysh"
+            "Quraysh",
+            "Payg'ambarimizga dushman bo'lgan qabila nomi !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) qaysi urug'dan edilar ?",
@@ -25,7 +27,8 @@ object Constants {
             "Bani Hamdon",
             "Bani Mazhij",
             "Bani Tayy",
-            "Bani Hoshim"
+            "Bani Hoshim",
+            "Payg'ambarimiz bobolarining otalarini ismi bilan nomlangan !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) qayerda tug'ilganlar ?",
@@ -33,7 +36,8 @@ object Constants {
             "Madina",
             "Hirot",
             "Yaman",
-            "Makka"
+            "Makka",
+            "Kabatulloh joylashgan hudud !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) otalari ismi nima ?",
@@ -41,7 +45,8 @@ object Constants {
             "Hoshim",
             "Abu Tolib",
             "Hamza",
-            "Abdulloh"
+            "Abdulloh",
+            "Allohning quli"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) bobolarining ismi nima ?",
@@ -49,7 +54,8 @@ object Constants {
             "Ibrohim",
             "Abu Tolib",
             "Hoshim",
-            "Abdulmuttalib"
+            "Abdulmuttalib",
+            "Bobolaridan so'ng Abu Tolib ismli tog'alari qaramog'ida qoldilar !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) bobolarining otalarini ismi nima ?",
@@ -57,7 +63,8 @@ object Constants {
             "Ibrohim",
             "Abdulloh",
             "Abdulmuttalib",
-            "Hoshim"
+            "Hoshim",
+            "Payg'ambarimiz Muhammad (s.a.v) shu insonni urug'idan edilar !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) bobolarining bobolarini ismi nima ?",
@@ -65,7 +72,8 @@ object Constants {
             "Abdulloh",
             "Ibrohim",
             "Abdulmuttalib",
-            "Abdumannof"
+            "Abdumannof",
+            "Ibrohim Xalilulloh Payg'ambarimizning uzoq shajarlari hisoblanadi !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) qaysi payg'ambarning avlodlaridan edilar ?",
@@ -73,7 +81,8 @@ object Constants {
             "Muso a.s",
             "Iso masih",
             "Lut a.s",
-            "Ibrohim Xalilulloh"
+            "Ibrohim Xalilulloh",
+            "Iso a.s Payg'ambarimizga qarindosh emas edilar !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) onalari ismi nima edi ?",
@@ -81,7 +90,8 @@ object Constants {
             "Oisha",
             "Mariyam",
             "Osiyo",
-            "Omina"
+            "Omina",
+            "Osiyo Onamiz Firavinning ayollari edilar !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) opa-singillari bo'lganmi, bo'lgan bo'lsa nechta ?",
@@ -89,7 +99,8 @@ object Constants {
             "1 ta",
             "2 ta",
             "3 ta",
-            "Bo'lmagan"
+            "Bo'lmagan",
+            "Payg'ambarimiz otalaridan juda erta ajralganlar !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) aka-ukalari bo'lganmi, bo'lgan bo'lsa nechta ?",
@@ -97,7 +108,8 @@ object Constants {
             "1 ta",
             "2 ta",
             "3 ta",
-            "Bo'lmagan"
+            "Bo'lmagan",
+            "Payg'ambarimiz otalaridan juda erta ajralganlar !"
         ))
         question.add(QuestionModel(
             "Payg'ambarimiz Muhammad (s.a.v) otalari qachon vafot etdilar",
@@ -105,7 +117,8 @@ object Constants {
             "Payg'ambarimiz 6 yoshga to'lganlarida",
             "Payg'ambarimiz Hadicha onamizga uylanganda",
             "To'g'ri javob mavjud emas",
-            "Payg'ambarimiz ona qornida 2 oyliklarida"
+            "Payg'ambarimiz ona qornida 2 oyliklarida",
+            "Payg'ambarimiz otalaridan juda erta ajralganlar !"
         ))
 //        question.add(QuestionModel(
 //            "",

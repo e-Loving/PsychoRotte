@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PsychoRotte">
         <activity
-            android:name=".activities.ResultActivity"
+            android:name=".PDFActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.ResultActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PsychoRotteLoginActivity" />
         <activity
             android:name=".activities.QuizActivity"
             android:exported="false"
@@ -41,8 +45,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

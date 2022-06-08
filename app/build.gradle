@@ -2,10 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 32
+    compileSdk 24
 
     defaultConfig {
         applicationId "uz.eloving.psychorotte"
@@ -51,4 +50,9 @@ dependencies {
     implementation "androidx.core:core-ktx:1.7.0"
     implementation 'io.github.chaosleung:pinview:1.4.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+
 }
