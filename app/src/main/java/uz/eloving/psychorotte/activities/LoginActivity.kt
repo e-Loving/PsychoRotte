@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
                     finish()
                 }
                 if (binding.pinview.text.toString().isEmpty()) {
+                    PrefManager.setToggle(this, false)
                     PrefManager.setName(this, binding.etName.text.toString())
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)

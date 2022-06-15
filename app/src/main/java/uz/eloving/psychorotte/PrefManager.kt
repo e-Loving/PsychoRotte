@@ -58,16 +58,32 @@ class PrefManager {
             return getInstance(ctx).getString(NAME, "Boss")
         }
 
-        fun getToggle(ctx: Context):Boolean{
+        fun getToggle(ctx: Context): Boolean {
             return getInstance(ctx).getBoolean(TOGGLE, false)
         }
 
-        fun setHighScore(ctx: Context, highScore:Int){
-            getInstance(ctx).edit().putInt("highscore", highScore).apply()
+        fun setBeginnerHighScore(ctx: Context, highScore: Int) {
+            getInstance(ctx).edit().putInt("beginnerhighscore", highScore).apply()
         }
 
-        fun getHighScore(ctx: Context):Int{
-            return getInstance(ctx).getInt("highscore", 0)
+        fun getBeginnerHighScore(ctx: Context): Int {
+            return getInstance(ctx).getInt("beginnerhighscore", 0)
+        }
+
+        fun setMediumHighScore(ctx: Context, highScore: Int) {
+            getInstance(ctx).edit().putInt("mediumhighscore", highScore).apply()
+        }
+
+        fun getMediumHighScore(ctx: Context): Int {
+            return getInstance(ctx).getInt("mediumhighscore", 0)
+        }
+
+        fun setProHighScore(ctx: Context, highScore: Int) {
+            getInstance(ctx).edit().putInt("prohighscore", highScore).apply()
+        }
+
+        fun getProHighScore(ctx: Context): Int {
+            return getInstance(ctx).getInt("prohighscore", 0)
         }
     }
 }

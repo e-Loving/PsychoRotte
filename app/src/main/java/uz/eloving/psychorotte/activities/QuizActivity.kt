@@ -147,8 +147,8 @@ class QuizActivity : AppCompatActivity() {
         }
 
         binding.ibBack.setOnClickListener {
-            if (correctAnswers > PrefManager.getHighScore(this)) {
-                PrefManager.setHighScore(this, correctAnswers)
+            if (correctAnswers > PrefManager.getBeginnerHighScore(this)) {
+                PrefManager.setBeginnerHighScore(this, correctAnswers)
             }
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -188,8 +188,8 @@ class QuizActivity : AppCompatActivity() {
             }
         )
         if (wrongAnswers > 2) {
-            if (correctAnswers > PrefManager.getHighScore(this)) {
-                PrefManager.setHighScore(this, correctAnswers)
+            if (correctAnswers > PrefManager.getBeginnerHighScore(this)) {
+                PrefManager.setBeginnerHighScore(this, correctAnswers)
             }
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("correct", correctAnswers)
@@ -203,8 +203,8 @@ class QuizActivity : AppCompatActivity() {
         binding.variant4.isEnabled = true
         resetBackgroundColor()
         if (questionNumber >= questions.size) {
-            if (correctAnswers > PrefManager.getHighScore(this)) {
-                PrefManager.setHighScore(this, correctAnswers)
+            if (correctAnswers > PrefManager.getBeginnerHighScore(this)) {
+                PrefManager.setBeginnerHighScore(this, correctAnswers)
             }
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("correct", correctAnswers)

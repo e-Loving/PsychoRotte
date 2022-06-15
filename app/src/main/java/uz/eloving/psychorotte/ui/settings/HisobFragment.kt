@@ -24,12 +24,15 @@ class HisobFragment : Fragment() {
     ): View {
         _binding = FragmentHisobBinding.inflate(inflater, container, false)
         binding.swSwitch.isChecked =
-            PrefManager.getPassword(requireActivity()) != "password"
+            PrefManager.getPassword(requireActivity()) != "password" && PrefManager.getToggle(
+                requireActivity()
+            )
         binding.swSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (!isChecked) {
                 PrefManager.setToggle(requireActivity(), false)
                 PrefManager.setAskPassword(requireActivity(), false)
             } else if (isChecked) {
+                PrefManager.setToggle(requireActivity(), true)
                 if (PrefManager.getPassword(requireActivity()) == "password") {
                     PrefManager.setToggle(requireActivity(), false)
                     binding.swSwitch.isChecked = false
@@ -51,12 +54,10 @@ class HisobFragment : Fragment() {
         }
         binding.mbUsername.setOnClickListener {
             if (PrefManager.getPassword(requireActivity()) == "password") {
-                val intent = Intent(requireContext(), SetUsernameActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(requireContext(), SetUsernameActivity::class.java))
             } else {
                 PrefManager.setAskPassword(requireActivity(), true)
-                val intent = Intent(requireContext(), CodeConfirmationActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(requireContext(), CodeConfirmationActivity::class.java))
             }
 
         }
